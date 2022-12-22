@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true" lang="de">
+<div class="container">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <nav class="navbar bg-light">
+                    <a class="navbar-brand" href="/">
+                        <f:image src="EXT:mb_simplesite/Resources/Public/Icons/house.svg" width="30" height="24" alt="Home" />
+                    </a>
+                </nav>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <f:for each="{mainNavigation}" as="mainNavigationItem">
+                            <li class="nav-item">
+                                <a href="{mainNavigationItem.link}"
+                                   target="{mainNavigationItem.target}"
+                                   title="{mainNavigationItem.title}"
+                                   class="nav-link{f:if(condition: mainNavigationItem.active, then: ' active')}"
+                                   {f:if(condition: mainNavigationItem.active, then: ' aria-current="page"')}
+                                >
+                                {mainNavigationItem.title}
+                                </a>
+                            </li>
+                        </f:for>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</div>
